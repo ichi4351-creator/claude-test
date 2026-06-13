@@ -17,7 +17,10 @@ claude-test/
 │   │   ├── code-reviewer.md         # コードレビュー専門エージェント
 │   │   ├── doc-writer.md            # ドキュメント生成エージェント
 │   │   ├── test-runner.md           # テスト生成・実行エージェント
-│   │   └── seo-blog-writer.md       # SEOブログ執筆エージェント
+│   │   ├── seo-blog-writer.md       # SEOブログ執筆エージェント
+│   │   ├── analyzer.md              # パイプライン第1段階：分析
+│   │   ├── builder.md               # パイプライン第2段階：実装
+│   │   └── reviewer.md              # パイプライン第3段階：検証
 │   ├── skills/                      # Skills定義
 │   │   ├── char-count/
 │   │   │   └── SKILL.md             # 文字数カウントスキル
@@ -33,7 +36,8 @@ claude-test/
 │       ├── review.md                # /review: コードレビュー実行
 │       ├── test.md                  # /test: テスト生成・実行
 │       ├── blog.md                  # /blog: SEOブログ記事執筆
-│       └── summarize.md             # /summarize: ファイル要約
+│       ├── summarize.md             # /summarize: ファイル要約
+│       └── build.md                 # /build: 3段階パイプライン実行
 ├── app.py                           # Pythonサンプル（セキュリティ修正済み）
 ├── calculator.py                    # 計算モジュール（docstring付き）
 ├── test_calculator.py               # ユニットテスト（23ケース）
@@ -48,6 +52,9 @@ claude-test/
 | `doc-writer` | 「ドキュメントを書いて」 | docstring・README生成 |
 | `test-runner` | 「テストを書いて」 | unittest生成・実行 |
 | `seo-blog-writer` | 「ブログ記事を書いて」 | SEO最適化記事執筆 |
+| `analyzer` | パイプライン第1段階 | 要件・コードを分析しAnalysis Reportを出力 |
+| `builder` | パイプライン第2段階 | Analysis Reportを受け取り実装・Build Reportを出力 |
+| `reviewer` | パイプライン第3段階 | Build Reportとコードを検証し最終判定を出力 |
 
 ## Skills
 
@@ -67,6 +74,7 @@ claude-test/
 | `/test` | 指定ファイルのテストをtest-runnerで生成・実行 |
 | `/blog` | SEOブログ記事をseo-blog-writerで執筆 |
 | `/summarize` | 指定ファイルをタイトル・トピック3つ・結論で要約 |
+| `/build` | Analyzer→Builder→Reviewerパイプラインを実行して完成品を生成 |
 
 ## 開発ルール
 
