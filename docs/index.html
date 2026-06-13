@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Claude Code・Python・Flask を活用した AI 開発ポートフォリオ。SubAgents 設計から REST API 構築、テスト自動化まで。" />
+  <title>ichi | AI Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- ========== NAV ========== -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">ichi<span class="logo-dot">.</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about"   class="nav-link">About</a></li>
+      <li><a href="#works"   class="nav-link">Works</a></li>
+      <li><a href="#skills"  class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg parallax-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">AI Developer</p>
+      <h1 class="hero-title reveal">
+        Building the<br>
+        <span class="gradient-text">Future with AI</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Claude Code × Python × Flask で<br>
+        次世代の開発ワークフローを設計・実装
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#works" class="btn btn-primary">Works を見る</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">01 / About</span>
+        <h2 class="section-title">Who I Am</h2>
+        <div class="section-bar"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            AI・自動化を軸にしたソフトウェア開発に取り組んでいます。
+            <strong>Claude Code</strong> を活用した SubAgents・Skills・Commands の設計から、
+            Flask による REST API 構築、ユニットテストの自動化まで幅広く対応します。
+          </p>
+          <p>
+            「動くだけ」ではなく、<span class="text-accent-red">セキュリティ・可読性・保守性</span>を意識したコードを書くことをモットーにしています。
+            チームの生産性を底上げするワークフロー自動化が得意です。
+          </p>
+          <ul class="about-stats">
+            <li><span class="stat-num">7</span><span class="stat-label">SubAgents</span></li>
+            <li><span class="stat-num">5</span><span class="stat-label">Skills</span></li>
+            <li><span class="stat-num">23</span><span class="stat-label">Test Cases</span></li>
+          </ul>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-img-wrap">
+            <img
+              src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg"
+              alt="夜明けの山岳風景"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+            <div class="about-img-badge">
+              <span>Claude Code</span>
+              <span>Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORKS ========== -->
+  <section id="works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">02 / Works</span>
+        <h2 class="section-title">Selected Works</h2>
+        <div class="section-bar"></div>
+      </div>
+      <div class="works-grid">
+
+        <article class="card reveal" data-index="0">
+          <div class="card-img-wrap">
+            <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="夕焼けの山並み" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-blue">AI / Automation</span>
+            <h3 class="card-title">Claude Code SubAgents 構築</h3>
+            <p class="card-desc">
+              コードレビュー・ドキュメント生成・テスト実行など 7 つの専門エージェントを設計・実装。
+              Analyzer → Builder → Reviewer の 3 段階パイプラインで品質を担保。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Claude Code</span>
+              <span class="card-tech">Markdown</span>
+              <span class="card-tech">Pipeline</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-index="1">
+          <div class="card-img-wrap">
+            <img src="images/christian-bruno-EDSGSKm5jvc-unsplash.jpg" alt="霧の森" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-red">Backend / Python</span>
+            <h3 class="card-title">Flask REST API 開発</h3>
+            <p class="card-desc">
+              入力バリデーション・環境変数管理・エラーハンドリングを組み込んだセキュリティ強化済みの Python Web API。
+              SQLite 連携の CRUD エンドポイントを提供。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Python</span>
+              <span class="card-tech">Flask</span>
+              <span class="card-tech">SQLite</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-index="2">
+          <div class="card-img-wrap">
+            <img src="images/john-fowler-9qgKQewttVs-unsplash.jpg" alt="砂漠の風景" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-blue">Testing / CI</span>
+            <h3 class="card-title">自動テストパイプライン</h3>
+            <p class="card-desc">
+              Python unittest を用いた 23 ケースのユニットテスト自動化。
+              エッジケース・境界値・型エラーまで網羅し、リグレッションを防止する堅牢なテスト基盤。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Python</span>
+              <span class="card-tech">unittest</span>
+              <span class="card-tech">CI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-index="3">
+          <div class="card-img-wrap">
+            <img src="images/nasa-rTZW4f02zY8-unsplash.jpg" alt="宇宙の星雲" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-red">AI / Content</span>
+            <h3 class="card-title">SEO ブログ自動生成</h3>
+            <p class="card-desc">
+              seo-blog-writer エージェントを活用し、キーワード選定から記事執筆・構成最適化まで自動化した
+              コンテンツ生成ワークフロー。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Claude Code</span>
+              <span class="card-tech">Skills</span>
+              <span class="card-tech">SEO</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-index="4">
+          <div class="card-img-wrap">
+            <img src="images/usgs-XFWg9u0TYs4-unsplash.jpg" alt="衛星画像" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-blue">Data / Analysis</span>
+            <h3 class="card-title">ニュース自動収集システム</h3>
+            <p class="card-desc">
+              Chrome MCP と連携して複数メディアから最新ニュースを自動取得・集計。
+              Yahoo・NHK・朝日の見出しを横断分析し、トレンドを可視化。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Chrome MCP</span>
+              <span class="card-tech">Scraping</span>
+              <span class="card-tech">Analysis</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-index="5">
+          <div class="card-img-wrap">
+            <img src="images/marcelo-quinan-R3pUGn5YiTg-unsplash.jpg" alt="都市の夜景" loading="lazy" width="600" height="340" />
+            <div class="card-overlay">
+              <span class="card-overlay-text">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag tag-red">Security / Python</span>
+            <h3 class="card-title">セキュリティ強化認証システム</h3>
+            <p class="card-desc">
+              PBKDF2-HMAC-SHA256 によるパスワードハッシュ化・ソルト生成・タイミング攻撃対策を実装した
+              堅牢なユーザー認証モジュール。
+            </p>
+            <div class="card-footer">
+              <span class="card-tech">Python</span>
+              <span class="card-tech">PBKDF2</span>
+              <span class="card-tech">Security</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills">
+    <div class="skills-bg-img parallax-bg" style="background-image:url('images/dmytro-tolokonov-Jq3WI9IQgEs-unsplash.jpg')"></div>
+    <div class="skills-overlay"></div>
+    <div class="container skills-inner">
+      <div class="section-header reveal">
+        <span class="section-label">03 / Skills</span>
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="section-bar"></div>
+      </div>
+      <div class="skills-cols">
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="dot dot-blue"></span>AI / Automation</h3>
+          <div class="skill-tags">
+            <span class="skill-tag tag-blue">Claude Code</span>
+            <span class="skill-tag tag-blue">SubAgents</span>
+            <span class="skill-tag tag-blue">Skills</span>
+            <span class="skill-tag tag-blue">Commands</span>
+            <span class="skill-tag tag-blue">MCP</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="dot dot-red"></span>Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag tag-red">Python</span>
+            <span class="skill-tag tag-red">Flask</span>
+            <span class="skill-tag tag-red">SQLite</span>
+            <span class="skill-tag tag-red">REST API</span>
+            <span class="skill-tag tag-red">unittest</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="dot dot-gray"></span>Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag tag-gray">Git</span>
+            <span class="skill-tag tag-gray">GitHub</span>
+            <span class="skill-tag tag-gray">VS Code</span>
+            <span class="skill-tag tag-gray">Chrome MCP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY STRIP ========== -->
+  <div class="gallery-strip">
+    <div class="gallery-track">
+      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="風景1" loading="lazy" />
+      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="風景2" loading="lazy" />
+      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="風景3" loading="lazy" />
+      <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="風景4" loading="lazy" />
+      <img src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg" alt="風景5" loading="lazy" />
+      <!-- duplicate for seamless loop -->
+      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="風景1" loading="lazy" aria-hidden="true" />
+      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="風景2" loading="lazy" aria-hidden="true" />
+      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="風景3" loading="lazy" aria-hidden="true" />
+    </div>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">04 / Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-bar" style="margin:0 auto 2rem;"></div>
+        <p class="contact-lead">お仕事のご依頼・ご質問はお気軽にどうぞ。</p>
+      </div>
+      <div class="contact-card reveal">
+        <a href="mailto:ichi.4351@gmail.com" class="contact-link">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">ichi.4351@gmail.com</span>
+          </span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://github.com/ichi4351-creator" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </span>
+          <span class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">ichi4351-creator</span>
+          </span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">ichi<span class="logo-dot">.</span></span>
+      <p class="footer-copy">&copy; 2026 ichi. Built with Claude Code.</p>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+    <button class="lightbox-close" id="lightbox-close" aria-label="閉じる">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

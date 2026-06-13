@@ -1,0 +1,438 @@
+/* =====================
+   CSS Variables
+   ===================== */
+:root {
+  --color-bg:          #1a1a1a;
+  --color-surface:     #2d2d2d;
+  --color-text:        #e0e0e0;
+  --color-muted:       #9e9e9e;
+  --color-accent-blue: #4a90d9;
+  --color-accent-red:  #c0392b;
+  --transition:        0.3s ease;
+  --radius:            8px;
+}
+
+/* =====================
+   Reset & Base
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* =====================
+   Nav
+   ===================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+nav.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* =====================
+   Hero
+   ===================== */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../.claude/image/練習用/nasa-rTZW4f02zY8-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn-red {
+  background: var(--color-accent-red);
+  color: #fff;
+}
+
+/* =====================
+   Section Common
+   ===================== */
+section {
+  padding: 5rem 2rem;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.section-line {
+  width: 48px;
+  height: 3px;
+  background: var(--color-accent-blue);
+  margin-bottom: 3rem;
+}
+
+/* =====================
+   About
+   ===================== */
+#about {
+  background: var(--color-surface);
+}
+
+.about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.about-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.about-img img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* =====================
+   Works
+   ===================== */
+#works {
+  background: var(--color-bg);
+}
+
+.works-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem 1.4rem 1.6rem;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* 4th card spans full third column row */
+.card-wide {
+  grid-column: span 1;
+}
+
+/* =====================
+   Skills
+   ===================== */
+#skills {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../.claude/image/練習用/deva-darshan-2XUfjLp7HYY-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.2);
+}
+
+.skills-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background: var(--color-accent-blue);
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* =====================
+   Contact
+   ===================== */
+#contact {
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-inner p {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent-blue);
+  color: var(--color-accent-blue);
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.contact-link:hover {
+  background: var(--color-accent-blue);
+  color: #fff;
+  opacity: 1;
+}
+
+/* =====================
+   Footer
+   ===================== */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* =====================
+   Fade-in Animation
+   ===================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   Responsive — 768px
+   ===================== */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+/* =====================
+   Responsive — 375px (mobile)
+   ===================== */
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

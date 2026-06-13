@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <span class="nav-logo">AI Dev</span>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg" role="img" aria-label="宇宙の星空"></div>
+    <div class="hero-content fade-in">
+      <h1>AI-Powered<br>Development</h1>
+      <p>Claude Code SubAgents・Flask API・自動テストパイプラインで<br>AI開発の可能性を広げる</p>
+      <a href="#works" class="btn btn-red">Works を見る</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-inner">
+      <h2 class="section-title fade-in">About</h2>
+      <div class="section-line fade-in"></div>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>
+            AI・自動化を軸にしたソフトウェア開発に取り組んでいます。
+            Claude Code を活用した SubAgents・Skills・Commands の設計から、
+            Flask による REST API 構築、ユニットテストの自動化まで幅広く対応します。
+          </p>
+          <p>
+            「動くだけ」ではなく、セキュリティ・可読性・保守性を意識したコードを書くことをモットーにしています。
+            チームの生産性を底上げするワークフロー自動化を得意としています。
+          </p>
+        </div>
+        <div class="about-img fade-in">
+          <img
+            src="../.claude/image/練習用/robert-lukeman-PH0HYjsf2n8-unsplash.jpg"
+            alt="山の夜明けの風景"
+            loading="lazy"
+            width="600"
+            height="360"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section id="works">
+    <div class="works-inner">
+      <h2 class="section-title fade-in">Works</h2>
+      <div class="section-line fade-in"></div>
+      <div class="works-grid">
+
+        <!-- Card 1 -->
+        <article class="card fade-in">
+          <img
+            class="card-img"
+            src="../.claude/image/練習用/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg"
+            alt="夜景の高速道路"
+            loading="lazy"
+            width="400"
+            height="200"
+          />
+          <div class="card-body">
+            <span class="card-tag">AI / Automation</span>
+            <h3 class="card-title">Claude Code SubAgents 構築</h3>
+            <p class="card-desc">
+              コードレビュー・ドキュメント生成・テスト実行など7つの専門エージェントを設計・実装。
+              Analyzer→Builder→Reviewer の3段階パイプラインで品質を担保。
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card fade-in">
+          <img
+            class="card-img"
+            src="../.claude/image/練習用/christian-bruno-EDSGSKm5jvc-unsplash.jpg"
+            alt="モダンなビル群"
+            loading="lazy"
+            width="400"
+            height="200"
+          />
+          <div class="card-body">
+            <span class="card-tag">Backend / Python</span>
+            <h3 class="card-title">Flask REST API 開発</h3>
+            <p class="card-desc">
+              入力バリデーション・環境変数管理・エラーハンドリングを組み込んだ
+              セキュリティ強化済みの Python Web API。SQLite と連携した CRUD エンドポイントを提供。
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card fade-in">
+          <img
+            class="card-img"
+            src="../.claude/image/練習用/john-fowler-9qgKQewttVs-unsplash.jpg"
+            alt="砂漠の夕日"
+            loading="lazy"
+            width="400"
+            height="200"
+          />
+          <div class="card-body">
+            <span class="card-tag">Testing / CI</span>
+            <h3 class="card-title">自動テストパイプライン</h3>
+            <p class="card-desc">
+              Python unittest を用いた23ケースのユニットテスト自動化。
+              エッジケース・境界値・型エラーまで網羅し、リグレッションを防止する堅牢なテスト基盤を構築。
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card fade-in">
+          <img
+            class="card-img"
+            src="../.claude/image/練習用/usgs-XFWg9u0TYs4-unsplash.jpg"
+            alt="衛星から見た地球"
+            loading="lazy"
+            width="400"
+            height="200"
+          />
+          <div class="card-body">
+            <span class="card-tag">AI / Content</span>
+            <h3 class="card-title">SEO ブログ自動生成</h3>
+            <p class="card-desc">
+              Claude Code の seo-blog-writer エージェントを活用し、
+              キーワード選定から記事執筆・構成最適化まで自動化したコンテンツ生成ワークフロー。
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="skills-bg" role="img" aria-label="夜の風景"></div>
+    <div class="skills-inner">
+      <h2 class="section-title fade-in">Skills</h2>
+      <div class="section-line fade-in"></div>
+      <div class="skills-tags fade-in">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Claude Code</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">SubAgents</span>
+        <span class="skill-tag">Skills</span>
+        <span class="skill-tag">Commands</span>
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">Unittest</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-inner">
+      <h2 class="section-title fade-in">Contact</h2>
+      <div class="section-line fade-in" style="margin-left: auto; margin-right: auto;"></div>
+      <p class="fade-in">お仕事のご依頼・ご質問はこちらからお気軽にどうぞ。</p>
+      <div class="contact-links fade-in">
+        <a href="mailto:ichi.4351@gmail.com" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://github.com/ichi4351-creator" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 AI Dev Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
