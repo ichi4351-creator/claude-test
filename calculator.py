@@ -86,3 +86,40 @@ def average(numbers):
     if not numbers:
         raise ValueError("List must not be empty")
     return sum(numbers) / len(numbers)
+
+
+def to_str(value: float) -> str:
+    """数値を文字列に変換して返す。
+
+    Args:
+        value: 変換する数値
+
+    Returns:
+        数値の文字列表現
+    """
+    return str(value)
+
+
+def to_number(s: str) -> int | float:
+    """文字列を数値（int または float）に変換して返す。
+
+    整数として解釈できる場合は int を、そうでなければ float を返す。
+
+    Args:
+        s: 変換する文字列
+
+    Returns:
+        変換後の int または float
+
+    Raises:
+        ValueError: 数値に変換できない文字列の場合
+    """
+    if not s:
+        raise ValueError("Cannot convert empty string to number")
+    try:
+        return int(s)
+    except ValueError:
+        try:
+            return float(s)
+        except ValueError:
+            raise ValueError(f"Cannot convert '{s}' to a number")
