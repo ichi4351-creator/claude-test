@@ -19,12 +19,21 @@ claude-test/
 │   │   ├── test-runner.md           # テスト生成・実行エージェント
 │   │   └── seo-blog-writer.md       # SEOブログ執筆エージェント
 │   ├── skills/                      # Skills定義
-│   │   └── char-count/
-│   │       └── SKILL.md             # 文字数カウントスキル
+│   │   ├── char-count/
+│   │   │   └── SKILL.md             # 文字数カウントスキル
+│   │   ├── database-tips/
+│   │   │   └── SKILL.md             # DB設計・クエリ最適化スキル
+│   │   ├── security-checks/
+│   │   │   └── SKILL.md             # セキュリティチェックスキル
+│   │   ├── performance-guide/
+│   │   │   └── SKILL.md             # パフォーマンス最適化スキル
+│   │   └── summarize/
+│   │       └── SKILL.md             # ファイル要約スキル
 │   └── commands/                    # カスタムスラッシュコマンド
 │       ├── review.md                # /review: コードレビュー実行
 │       ├── test.md                  # /test: テスト生成・実行
-│       └── blog.md                  # /blog: SEOブログ記事執筆
+│       ├── blog.md                  # /blog: SEOブログ記事執筆
+│       └── summarize.md             # /summarize: ファイル要約
 ├── app.py                           # Pythonサンプル（セキュリティ修正済み）
 ├── calculator.py                    # 計算モジュール（docstring付き）
 ├── test_calculator.py               # ユニットテスト（23ケース）
@@ -48,6 +57,7 @@ claude-test/
 | `database-tips` | 「DBの設計を教えて」「N+1を直したい」 | DB設計・クエリ最適化・インデックス戦略 |
 | `security-checks` | 「セキュリティチェックして」 | OWASP Top 10チェックリスト・脆弱性対策 |
 | `performance-guide` | 「パフォーマンスを改善したい」 | 処理速度・メモリ・キャッシュ・非同期最適化 |
+| `summarize` | 「要約して」「まとめて」 | タイトル・トピック3つ・結論の形式でファイルを要約 |
 
 ## Commands
 
@@ -56,6 +66,7 @@ claude-test/
 | `/review` | 指定ファイルをcode-reviewerでレビュー |
 | `/test` | 指定ファイルのテストをtest-runnerで生成・実行 |
 | `/blog` | SEOブログ記事をseo-blog-writerで執筆 |
+| `/summarize` | 指定ファイルをタイトル・トピック3つ・結論で要約 |
 
 ## 開発ルール
 
