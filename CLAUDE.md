@@ -20,7 +20,8 @@ claude-test/
 │   │   ├── seo-blog-writer.md       # SEOブログ執筆エージェント
 │   │   ├── analyzer.md              # パイプライン第1段階：分析
 │   │   ├── builder.md               # パイプライン第2段階：実装
-│   │   └── reviewer.md              # パイプライン第3段階：検証
+│   │   ├── reviewer.md              # パイプライン第3段階：検証
+│   │   └── frontend-reviewer.md     # HTML/CSS/JSレビュー＆修正エージェント
 │   ├── skills/                      # Skills定義
 │   │   ├── char-count/
 │   │   │   └── SKILL.md             # 文字数カウントスキル
@@ -30,8 +31,10 @@ claude-test/
 │   │   │   └── SKILL.md             # セキュリティチェックスキル
 │   │   ├── performance-guide/
 │   │   │   └── SKILL.md             # パフォーマンス最適化スキル
-│   │   └── summarize/
-│   │       └── SKILL.md             # ファイル要約スキル
+│   │   ├── summarize/
+│   │   │   └── SKILL.md             # ファイル要約スキル
+│   │   └── frontend-review/
+│   │       └── SKILL.md             # フロントエンドレビュー観点チェックリスト
 │   └── commands/                    # カスタムスラッシュコマンド
 │       ├── review.md                # /review: コードレビュー実行
 │       ├── test.md                  # /test: テスト生成・実行
@@ -55,6 +58,7 @@ claude-test/
 | `analyzer` | パイプライン第1段階 | 要件・コードを分析しAnalysis Reportを出力 |
 | `builder` | パイプライン第2段階 | Analysis Reportを受け取り実装・Build Reportを出力 |
 | `reviewer` | パイプライン第3段階 | Build Reportとコードを検証し最終判定を出力 |
+| `frontend-reviewer` | 「HTMLをレビューして」「コードレビューしながら実装して」 | HTML/CSS/JS レビュー・修正・デプロイ前チェック |
 
 ## Skills
 
@@ -65,6 +69,7 @@ claude-test/
 | `security-checks` | 「セキュリティチェックして」 | OWASP Top 10チェックリスト・脆弱性対策 |
 | `performance-guide` | 「パフォーマンスを改善したい」 | 処理速度・メモリ・キャッシュ・非同期最適化 |
 | `summarize` | 「要約して」「まとめて」 | タイトル・トピック3つ・結論の形式でファイルを要約 |
+| `frontend-review` | 「フロントエンドレビューして」「レビュー観点を出して」 | HTML/CSS/JS/a11y/デプロイの観点チェックリスト提示 |
 
 ## Commands
 
