@@ -111,7 +111,7 @@ strong { color: var(--white); }
   transition: width .3s var(--ease);
 }
 .nav-link:hover,
-.nav-link.active { color: var(--white); }
+.nav-link.active { color: var(--white); font-weight: 700; }
 .nav-link:hover::after,
 .nav-link.active::after { width: 100%; }
 
@@ -502,6 +502,7 @@ section { padding: 7rem 0; }
 .skills-bg-img {
   position: absolute;
   inset: 0;
+  background-image: url('images/dmytro-tolokonov-Jq3WI9IQgEs-unsplash.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(.15) saturate(.5);
@@ -570,6 +571,7 @@ section { padding: 7rem 0; }
   height: 100%;
   animation: galleryScroll 28s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 .gallery-track img {
   height: 200px;
@@ -686,12 +688,12 @@ footer {
   inset: 0;
   background: rgba(0,0,0,.92);
   z-index: 999;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
 }
-#lightbox.open { display: flex; }
+#lightbox[hidden] { display: none; }
 #lightbox-img {
   max-width: 90vw;
   max-height: 85vh;

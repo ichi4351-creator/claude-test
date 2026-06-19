@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import sqlite3
 import os
 import getpass
@@ -34,7 +36,7 @@ def get_db_password() -> str:
     return _require_env("DB_PASSWORD")
 
 
-def hash_password(password: str, salt: "bytes | None" = None) -> "tuple[str, str]":
+def hash_password(password: str, salt: bytes | None = None) -> tuple[str, str]:
     """パスワードをPBKDF2-HMAC-SHA256でハッシュ化する。
 
     Args:
@@ -66,7 +68,7 @@ def verify_password(password: str, stored_hash: str, stored_salt: str) -> bool:
     return secrets.compare_digest(computed_hash, stored_hash)
 
 
-def get_user(username: str) -> "sqlite3.Row | None":
+def get_user(username: str) -> sqlite3.Row | None:
     """ユーザー名でユーザーレコードを取得する。
 
     Args:
@@ -76,11 +78,15 @@ def get_user(username: str) -> "sqlite3.Row | None":
         ユーザーレコード、存在しない場合は None
     """
     db_path = os.environ.get("DB_PATH", "users.db")
-    with sqlite3.connect(db_path) as conn:
-        conn.row_factory = sqlite3.Row
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
-        return cursor.fetchone()
+    try:
+        with sqlite3.connect(db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+            return cursor.fetchone()
+    except sqlite3.Error as e:
+        logger.error("Database error in get_user: %s", e)
+        return None
 
 
 def read_file(filepath: str) -> str:
@@ -95,12 +101,17 @@ def read_file(filepath: str) -> str:
     Raises:
         ValueError: パストラバーサルが検出された場合
     """
-    base_dir = os.path.abspath(os.path.dirname(__file__))
-    abs_path = os.path.abspath(os.path.join(base_dir, filepath))
-    if os.path.commonpath([abs_path, base_dir]) != base_dir:
+    real_base = os.path.realpath(os.path.dirname(__file__))
+    real_path = os.path.realpath(os.path.join(real_base, filepath))
+    if os.path.commonpath([real_path, real_base]) != real_base:
         raise ValueError("Access denied: path traversal detected")
-    with open(abs_path, encoding="utf-8") as f:
-        return f.read()
+    try:
+        with open(real_path, encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"File not found: {filepath}")
+    except OSError as e:
+        raise OSError(f"Cannot read file '{filepath}': {e}") from e
 
 
 def login(username: str, password: str) -> bool:

@@ -62,6 +62,9 @@ class TestPower(unittest.TestCase):
     def test_zero_exp(self):
         self.assertEqual(power(5, 0), 1)
 
+    def test_zero_base_zero_exp(self):
+        self.assertEqual(power(0, 0), 1)
+
     def test_negative_exp(self):
         self.assertAlmostEqual(power(2, -1), 0.5)
 
@@ -127,6 +130,14 @@ class TestToNumber(unittest.TestCase):
 
     def test_strips_whitespace(self):
         self.assertEqual(to_number("  10  "), 10)
+
+    def test_inf_raises(self):
+        with self.assertRaises(ValueError):
+            to_number("inf")
+
+    def test_nan_raises(self):
+        with self.assertRaises(ValueError):
+            to_number("nan")
 
 
 if __name__ == "__main__":

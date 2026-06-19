@@ -51,7 +51,7 @@
         <a href="#contact" class="btn btn-outline">Contact</a>
       </div>
     </div>
-    <div class="hero-scroll-hint">
+    <div class="hero-scroll-hint" aria-hidden="true">
       <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
@@ -112,7 +112,7 @@
       <div class="works-grid">
 
         <article class="card reveal" data-index="0">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="夕焼けの山並み - 画像を拡大">
             <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="夕焼けの山並み" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -134,7 +134,7 @@
         </article>
 
         <article class="card reveal" data-index="1">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="霧の森 - 画像を拡大">
             <img src="images/christian-bruno-EDSGSKm5jvc-unsplash.jpg" alt="霧の森" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -156,7 +156,7 @@
         </article>
 
         <article class="card reveal" data-index="2">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="砂漠の風景 - 画像を拡大">
             <img src="images/john-fowler-9qgKQewttVs-unsplash.jpg" alt="砂漠の風景" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -178,7 +178,7 @@
         </article>
 
         <article class="card reveal" data-index="3">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="宇宙の星雲 - 画像を拡大">
             <img src="images/nasa-rTZW4f02zY8-unsplash.jpg" alt="宇宙の星雲" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -200,7 +200,7 @@
         </article>
 
         <article class="card reveal" data-index="4">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="衛星画像 - 画像を拡大">
             <img src="images/usgs-XFWg9u0TYs4-unsplash.jpg" alt="衛星画像" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -222,7 +222,7 @@
         </article>
 
         <article class="card reveal" data-index="5">
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" tabindex="0" role="button" aria-label="都市の夜景 - 画像を拡大">
             <img src="images/marcelo-quinan-R3pUGn5YiTg-unsplash.jpg" alt="都市の夜景" loading="lazy" width="600" height="340" />
             <div class="card-overlay">
               <span class="card-overlay-text">View Details</span>
@@ -249,7 +249,7 @@
 
   <!-- ========== SKILLS ========== -->
   <section id="skills">
-    <div class="skills-bg-img parallax-bg" style="background-image:url('images/dmytro-tolokonov-Jq3WI9IQgEs-unsplash.jpg')"></div>
+    <div class="skills-bg-img parallax-bg"></div>
     <div class="skills-overlay"></div>
     <div class="container skills-inner">
       <div class="section-header reveal">
@@ -294,11 +294,11 @@
   <!-- ========== GALLERY STRIP ========== -->
   <div class="gallery-strip">
     <div class="gallery-track">
-      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="風景1" loading="lazy" />
-      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="風景2" loading="lazy" />
-      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="風景3" loading="lazy" />
-      <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="風景4" loading="lazy" />
-      <img src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg" alt="風景5" loading="lazy" />
+      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="岩場と海の風景" loading="lazy" />
+      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="霧の立ち込める山並み" loading="lazy" />
+      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="夜明けの海岸" loading="lazy" />
+      <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="夕焼けの山並み" loading="lazy" />
+      <img src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg" alt="夜明けの山岳風景" loading="lazy" />
       <!-- duplicate for seamless loop (must match first 5 exactly) -->
       <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
       <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
@@ -318,13 +318,13 @@
         <p class="contact-lead">お仕事のご依頼・ご質問はお気軽にどうぞ。</p>
       </div>
       <div class="contact-card reveal">
-        <a href="mailto:ichi.4351@gmail.com" class="contact-link">
+        <a id="contact-email" href="#" class="contact-link">
           <span class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </span>
           <span class="contact-info">
             <span class="contact-label">Email</span>
-            <span class="contact-value">ichi.4351@gmail.com</span>
+            <span class="contact-value" id="contact-email-text"></span>
           </span>
           <span class="contact-arrow">→</span>
         </a>
@@ -351,12 +351,12 @@
   </footer>
 
   <!-- ========== LIGHTBOX ========== -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+  <div id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
     <span id="lightbox-title" class="sr-only">画像拡大表示</span>
     <button class="lightbox-close" id="lightbox-close" aria-label="閉じる">&times;</button>
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

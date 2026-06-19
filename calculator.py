@@ -1,5 +1,9 @@
 """四則演算・べき乗・平均値を提供するシンプルな計算モジュール。"""
 
+from __future__ import annotations
+
+import math
+
 
 def add(a: float, b: float) -> float:
     """2つの数値を加算して返す。
@@ -71,7 +75,7 @@ def power(base: float, exp: float) -> float:
     return base ** exp
 
 
-def average(numbers: list) -> float:
+def average(numbers: list[float]) -> float:
     """数値リストの平均値を返す。
 
     Args:
@@ -100,7 +104,7 @@ def to_str(value: float) -> str:
     return str(value)
 
 
-def to_number(s: str) -> "int | float":
+def to_number(s: str) -> int | float:
     """文字列を数値（int または float）に変換して返す。
 
     整数として解釈できる場合は int を、そうでなければ float を返す。
@@ -121,6 +125,9 @@ def to_number(s: str) -> "int | float":
         return int(s)
     except ValueError:
         try:
-            return float(s)
+            result = float(s)
+            if not math.isfinite(result):
+                raise ValueError(f"Cannot convert '{s}' to a finite number")
+            return result
         except ValueError:
             raise ValueError(f"Cannot convert '{s}' to a number")
