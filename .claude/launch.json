@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["server.py"],
       "port": 5000
+    },
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "docs"],
+      "port": 8080
     }
   ]
 }

@@ -75,12 +75,15 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
    ============================================= */
 const parallaxEls = document.querySelectorAll('.parallax-bg');
 function updateParallax() {
-  const sy = window.scrollY;
   parallaxEls.forEach(el => {
-    el.style.transform = `translateY(${sy * 0.35}px)`;
+    const section = el.parentElement;
+    const rect = section.getBoundingClientRect();
+    const offset = rect.top * 0.35;
+    el.style.transform = `translateY(${offset}px)`;
   });
 }
 window.addEventListener('scroll', updateParallax, { passive: true });
+updateParallax();
 
 /* =============================================
    Lightbox
@@ -89,13 +92,17 @@ const lightbox  = document.getElementById('lightbox');
 const lbImg     = document.getElementById('lightbox-img');
 const lbClose   = document.getElementById('lightbox-close');
 
+let lastFocused = null;
+
 document.querySelectorAll('.card-img-wrap img').forEach(img => {
   img.style.cursor = 'zoom-in';
   img.addEventListener('click', () => {
+    lastFocused = img;
     lbImg.src = img.src;
     lbImg.alt = img.alt;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
+    lbClose.focus();
   });
 });
 
@@ -103,6 +110,7 @@ function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
   lbImg.src = '';
+  if (lastFocused) lastFocused.focus();
 }
 
 lbClose.addEventListener('click', closeLightbox);

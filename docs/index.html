@@ -298,20 +298,22 @@
       <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="風景3" loading="lazy" />
       <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="風景4" loading="lazy" />
       <img src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg" alt="風景5" loading="lazy" />
-      <!-- duplicate for seamless loop -->
-      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="風景1" loading="lazy" aria-hidden="true" />
-      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="風景2" loading="lazy" aria-hidden="true" />
-      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="風景3" loading="lazy" aria-hidden="true" />
+      <!-- duplicate for seamless loop (must match first 5 exactly) -->
+      <img src="images/matt-baron-thompson-7dUEGYDEJgc-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
+      <img src="images/rob-mulally-oacHEtIlXsA-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
+      <img src="images/deva-darshan-2XUfjLp7HYY-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
+      <img src="images/jordan-wozniak-xP_AGmeEa6s-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
+      <img src="images/robert-lukeman-PH0HYjsf2n8-unsplash.jpg" alt="" loading="lazy" aria-hidden="true" />
     </div>
   </div>
 
   <!-- ========== CONTACT ========== -->
   <section id="contact">
     <div class="container">
-      <div class="section-header reveal" style="text-align:center;">
+      <div class="section-header reveal section-header--center">
         <span class="section-label">04 / Contact</span>
         <h2 class="section-title">Get In Touch</h2>
-        <div class="section-bar" style="margin:0 auto 2rem;"></div>
+        <div class="section-bar section-bar--center"></div>
         <p class="contact-lead">お仕事のご依頼・ご質問はお気軽にどうぞ。</p>
       </div>
       <div class="contact-card reveal">
@@ -348,7 +350,8 @@
   </footer>
 
   <!-- ========== LIGHTBOX ========== -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+  <div id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <span id="lightbox-title" class="sr-only">画像拡大表示</span>
     <button class="lightbox-close" id="lightbox-close" aria-label="閉じる">&times;</button>
     <img id="lightbox-img" src="" alt="" />
   </div>
