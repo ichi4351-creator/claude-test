@@ -1,7 +1,7 @@
 """四則演算・べき乗・平均値を提供するシンプルな計算モジュール。"""
 
 
-def add(a, b):
+def add(a: float, b: float) -> float:
     """2つの数値を加算して返す。
 
     Args:
@@ -14,7 +14,7 @@ def add(a, b):
     return a + b
 
 
-def subtract(a, b):
+def subtract(a: float, b: float) -> float:
     """2つの数値を減算して返す。
 
     Args:
@@ -27,7 +27,7 @@ def subtract(a, b):
     return a - b
 
 
-def multiply(a, b):
+def multiply(a: float, b: float) -> float:
     """2つの数値を乗算して返す。
 
     Args:
@@ -40,7 +40,7 @@ def multiply(a, b):
     return a * b
 
 
-def divide(a, b):
+def divide(a: float, b: float) -> float:
     """2つの数値を除算して返す。
 
     Args:
@@ -58,7 +58,7 @@ def divide(a, b):
     return a / b
 
 
-def power(base, exp):
+def power(base: float, exp: float) -> float:
     """base の exp 乗を返す。
 
     Args:
@@ -71,7 +71,7 @@ def power(base, exp):
     return base ** exp
 
 
-def average(numbers):
+def average(numbers: list) -> float:
     """数値リストの平均値を返す。
 
     Args:
@@ -100,7 +100,7 @@ def to_str(value: float) -> str:
     return str(value)
 
 
-def to_number(s: str) -> int | float:
+def to_number(s: str) -> "int | float":
     """文字列を数値（int または float）に変換して返す。
 
     整数として解釈できる場合は int を、そうでなければ float を返す。
@@ -114,6 +114,7 @@ def to_number(s: str) -> int | float:
     Raises:
         ValueError: 数値に変換できない文字列の場合
     """
+    s = s.strip()
     if not s:
         raise ValueError("Cannot convert empty string to number")
     try:

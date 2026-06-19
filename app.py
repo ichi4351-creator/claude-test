@@ -3,6 +3,9 @@ import os
 import getpass
 import hashlib
 import secrets
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def _require_env(name: str) -> str:
@@ -18,16 +21,20 @@ def _require_env(name: str) -> str:
         RuntimeError: 環境変数が未設定の場合
     """
     value = os.environ.get(name)
-    if not value:
+    if value is None:
         raise RuntimeError(f"Required environment variable '{name}' is not set")
     return value
 
 
-SECRET_KEY = _require_env("SECRET_KEY")
-DB_PASSWORD = _require_env("DB_PASSWORD")
+def get_secret_key() -> str:
+    return _require_env("SECRET_KEY")
 
 
-def hash_password(password: str, salt: bytes | None = None) -> tuple[str, str]:
+def get_db_password() -> str:
+    return _require_env("DB_PASSWORD")
+
+
+def hash_password(password: str, salt: "bytes | None" = None) -> "tuple[str, str]":
     """パスワードをPBKDF2-HMAC-SHA256でハッシュ化する。
 
     Args:
@@ -59,7 +66,7 @@ def verify_password(password: str, stored_hash: str, stored_salt: str) -> bool:
     return secrets.compare_digest(computed_hash, stored_hash)
 
 
-def get_user(username: str) -> sqlite3.Row | None:
+def get_user(username: str) -> "sqlite3.Row | None":
     """ユーザー名でユーザーレコードを取得する。
 
     Args:
@@ -68,7 +75,8 @@ def get_user(username: str) -> sqlite3.Row | None:
     Returns:
         ユーザーレコード、存在しない場合は None
     """
-    with sqlite3.connect("users.db") as conn:
+    db_path = os.environ.get("DB_PATH", "users.db")
+    with sqlite3.connect(db_path) as conn:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
@@ -89,9 +97,9 @@ def read_file(filepath: str) -> str:
     """
     base_dir = os.path.abspath(os.path.dirname(__file__))
     abs_path = os.path.abspath(os.path.join(base_dir, filepath))
-    if not abs_path.startswith(base_dir + os.sep):
+    if os.path.commonpath([abs_path, base_dir]) != base_dir:
         raise ValueError("Access denied: path traversal detected")
-    with open(abs_path) as f:
+    with open(abs_path, encoding="utf-8") as f:
         return f.read()
 
 
@@ -107,9 +115,9 @@ def login(username: str, password: str) -> bool:
     """
     user = get_user(username)
     if user and verify_password(password, user["password_hash"], user["password_salt"]):
-        print("Login successful")
+        logger.info("Login successful: %s", username)
         return True
-    print("Login failed")
+    logger.warning("Login failed: %s", username)
     return False
 
 

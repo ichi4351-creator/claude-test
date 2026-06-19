@@ -14,28 +14,31 @@ window.addEventListener('load', () => {
 /* =============================================
    Nav — scroll shadow + hamburger
    ============================================= */
-const nav = document.getElementById('nav');
+const nav       = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const navLinks  = document.getElementById('nav-links');
 
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 30);
-}, { passive: true });
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+}
 
-hamburger.addEventListener('click', () => {
-  const open = hamburger.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', open);
-  navLinks.classList.toggle('open', open);
-});
-
-// close menu on link click
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-    navLinks.classList.remove('open');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+    navLinks.classList.toggle('open', open);
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    });
+  });
+}
 
 /* =============================================
    Smooth scroll with nav offset

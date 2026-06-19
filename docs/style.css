@@ -5,6 +5,7 @@
   --bg:           #141414;
   --surface:      #1e1e1e;
   --surface2:     #262626;
+  --footer-bg:    #0d0d0d;
   --border:       #333;
   --text:         #e8e8e8;
   --muted:        #888;
@@ -654,7 +655,7 @@ section { padding: 7rem 0; }
    Footer
    ============================================= */
 footer {
-  background: #0d0d0d;
+  background: var(--footer-bg);
   border-top: 1px solid var(--border);
   padding: 1.8rem 2rem;
 }
@@ -711,6 +712,21 @@ footer {
   transition: opacity .2s;
 }
 .lightbox-close:hover { opacity: 1; }
+
+/* =============================================
+   Reduced Motion
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .gallery-track { animation: none; }
+  .scroll-line   { animation: none; }
+  .loader-bar    { animation: none; width: 100%; }
+  * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
 
 /* =============================================
    Responsive — 1024px
