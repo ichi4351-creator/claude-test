@@ -8,3 +8,7 @@
   - 古いSF小説（アシモフやル＝グィンをよく読む）
 
 - **学びたいこと**: Pythonを使ったデータ分析と、それを活かした可視化の技術
+
+## 参考動画
+
+- [YouTube動画](https://www.youtube.com/watch?v=tm4vEItHhi0&list=PLTVDiCkc_FCvDwFi7Hy_hxbP82WRqPJ-f)
